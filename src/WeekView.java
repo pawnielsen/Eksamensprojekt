@@ -10,6 +10,9 @@ import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.util.Calendar;
 
 
 public class WeekView extends JFrame {
@@ -46,52 +49,62 @@ public class WeekView extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * Sets the time for the scheme 
 	 */
 	public WeekView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 1500, 1440, 1000);
+		setBounds(100, 500, 1000, 1000);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Monday");
+		int Mon = Logic.getFirstDayOfWeek() + 1;
+		int Tue = Logic.getFirstDayOfWeek() + 2;
+		int Wed = Logic.getFirstDayOfWeek() + 3;
+		int Thu = Logic.getFirstDayOfWeek() + 4;
+		int Fri = Logic.getFirstDayOfWeek() + 5;
+		int Sat = Logic.getFirstDayOfWeek() + 6;
+		int Sun = Logic.getFirstDayOfWeek() + 7;
+		
+		
+		JLabel lblNewLabel = new JLabel("Mon  " + Mon);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(121, 41, 90, 16);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblTuesday = new JLabel("Tuesday");
+		JLabel lblTuesday = new JLabel("Tue  " + Tue);
 		lblTuesday.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		lblTuesday.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTuesday.setBounds(204, 41, 90, 16);
 		contentPane.add(lblTuesday);
 		
-		JLabel label_1 = new JLabel("Wednesday");
+		JLabel label_1 = new JLabel("Wed  " + Wed);
 		label_1.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setBounds(288, 41, 90, 16);
 		contentPane.add(label_1);
 		
-		JLabel label_2 = new JLabel("Thursday");
+		JLabel label_2 = new JLabel("Thu  " + Thu);
 		label_2.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
 		label_2.setBounds(378, 41, 90, 16);
 		contentPane.add(label_2);
 		
-		JLabel label_3 = new JLabel("Friday");
+		JLabel label_3 = new JLabel("Fri  " + Fri);
 		label_3.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setBounds(466, 41, 90, 16);
 		contentPane.add(label_3);
 		
-		JLabel label_4 = new JLabel("Saturday");
+		JLabel label_4 = new JLabel("Sat  " + Sat);
 		label_4.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setBounds(557, 41, 90, 16);
 		contentPane.add(label_4);
 		
-		JLabel label_5 = new JLabel("Sunday");
+		JLabel label_5 = new JLabel("Sun  " + Sun );
 		label_5.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setBounds(645, 41, 90, 16);
@@ -169,6 +182,8 @@ public class WeekView extends JFrame {
 		label_23.setBounds(53, 750, 61, 16);
 		contentPane.add(label_23);
 		
+		// Sets the days and text fields for the scheme
+		
 		String[] daysMonday = {"Monday"};
 		Object[][] eventsMonday = {
 			    {"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"}, {"Fri"}, {"Fri"},{"Fri"}, {"Fri"}
@@ -197,6 +212,8 @@ public class WeekView extends JFrame {
 		Object[][] eventsSunday = {
 			    {"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"}, {"Fri"}, {"Fri"},{"Fri"}, {"Fri"}
 			};
+		
+		// sets the boundaries, colors, height etc. for the scheme 
 		
 		table_3 = new JTable(eventsMonday, daysMonday);
 		table_3.setForeground(Color.GRAY);
@@ -246,6 +263,23 @@ public class WeekView extends JFrame {
 		table_11.setRowHeight(40);
 		table_11.setAlignmentY(TOP_ALIGNMENT);
 		contentPane.add(table_11);
+		
+		JLabel lblFunctions = new JLabel("Functions");
+		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 18));
+		lblFunctions.setBounds(781, 91, 101, 16);
+		contentPane.add(lblFunctions);
+		
+		JButton btnViewToday = new JButton("View Today");
+		btnViewToday.setBounds(776, 120, 112, 29);
+		contentPane.add(btnViewToday);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(776, 160, 112, 29);
+		contentPane.add(comboBox);
+		
+		JButton btnCreatEvent = new JButton("Create Event");
+		btnCreatEvent.setBounds(776, 200, 112, 29);
+		contentPane.add(btnCreatEvent);
 		
 
 		

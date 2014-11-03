@@ -8,11 +8,15 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
+
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JRadioButton;
 
 
-public class Login_screen extends JFrame {
+public class LoginScreen extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtBrugernavn;
@@ -30,7 +34,7 @@ public class Login_screen extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login_screen frame = new Login_screen();
+					LoginScreen frame = new LoginScreen();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +46,7 @@ public class Login_screen extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Login_screen() {
+	public LoginScreen() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -58,14 +62,24 @@ public class Login_screen extends JFrame {
 		
 		JButton btnLogin = new JButton("Log-in");
 		btnLogin.setBounds(279, 220, 117, 29);
-		contentPane.add(btnLogin);
+		contentPane.add(btnLogin); 
+		btnLogin.addMouseListener(new MouseAdapter() 
+		{
+			public void mouseClicked(MouseEvent e) 
+			{
+				WeekView frame = new WeekView();
+				frame.setVisible(true);
+			}
+		});
+	
+
 		
 		lblUsername = new JLabel("Username");
 		lblUsername.setBounds(124, 110, 95, 16);
 		contentPane.add(lblUsername);
 		
 		passwordField = new JPasswordField();
-		passwordField.setToolTipText("12345678");
+		passwordField.setToolTipText("1234");
 		passwordField.setBounds(231, 144, 134, 28);
 		contentPane.add(passwordField);
 		
@@ -74,8 +88,14 @@ public class Login_screen extends JFrame {
 		contentPane.add(lblPassword);
 		
 		btnExit = new JButton("Exit ");
-		btnExit.setBounds(124, 220, 117, 29);
+		btnExit.addMouseListener(new MouseAdapter() {
+		public void mouseClicked(MouseEvent e) {
+			System.exit(0);
+		}
+	});
+		btnExit.setBounds(117, 220, 117, 29);
 		contentPane.add(btnExit);
+
 		
 		JLabel lblCbsCalendar = new JLabel("CBS CALENDAR");
 		lblCbsCalendar.setFont(new Font("Lucida Grande", Font.BOLD, 18));
