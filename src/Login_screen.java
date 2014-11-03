@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import java.awt.Font;
+import javax.swing.JRadioButton;
 
 
 public class Login_screen extends JFrame {
@@ -19,6 +20,8 @@ public class Login_screen extends JFrame {
 	private JPasswordField passwordField;
 	private JLabel lblPassword;
 	private JButton btnExit;
+	private JLabel lblWelcomeToCbs;
+	private JLabel lblPleaseSignIn;
 
 	/**
 	 * Launch the application.
@@ -54,7 +57,7 @@ public class Login_screen extends JFrame {
 		txtBrugernavn.setColumns(10);
 		
 		JButton btnLogin = new JButton("Log-in");
-		btnLogin.setBounds(246, 197, 117, 29);
+		btnLogin.setBounds(279, 220, 117, 29);
 		contentPane.add(btnLogin);
 		
 		lblUsername = new JLabel("Username");
@@ -71,12 +74,27 @@ public class Login_screen extends JFrame {
 		contentPane.add(lblPassword);
 		
 		btnExit = new JButton("Exit ");
-		btnExit.setBounds(101, 197, 117, 29);
+		btnExit.setBounds(124, 220, 117, 29);
 		contentPane.add(btnExit);
 		
 		JLabel lblCbsCalendar = new JLabel("CBS CALENDAR");
 		lblCbsCalendar.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		lblCbsCalendar.setBounds(32, 46, 240, 28);
+		lblCbsCalendar.setBounds(32, 17, 240, 28);
 		contentPane.add(lblCbsCalendar);
+		
+		JRadioButton rdbtnRememberAccount = new JRadioButton("Remember account");
+		rdbtnRememberAccount.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+		rdbtnRememberAccount.setBounds(231, 184, 145, 23);
+		contentPane.add(rdbtnRememberAccount);
+		
+		lblWelcomeToCbs = new JLabel("Welcome to CBS Calendar");
+		lblWelcomeToCbs.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+		lblWelcomeToCbs.setBounds(32, 57, 177, 16);
+		contentPane.add(lblWelcomeToCbs);
+		
+		lblPleaseSignIn = new JLabel("Please sign in with your CBS account");
+		lblPleaseSignIn.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
+		lblPleaseSignIn.setBounds(32, 75, 240, 16);
+		contentPane.add(lblPleaseSignIn);
 	}
 }
