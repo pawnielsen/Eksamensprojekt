@@ -264,22 +264,31 @@ public class WeekView extends JFrame {
 		table_11.setAlignmentY(TOP_ALIGNMENT);
 		contentPane.add(table_11);
 		
+		//Label for functions
 		JLabel lblFunctions = new JLabel("Functions");
 		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		lblFunctions.setBounds(781, 91, 101, 16);
+		lblFunctions.setBounds(781, 90, 101, 16);
 		contentPane.add(lblFunctions);
 		
-		JButton btnViewToday = new JButton("View Today");
+		//Button which directs you to 'Todays view'
+		JButton btnViewToday = new JButton("Todays view");
 		btnViewToday.setBounds(776, 120, 112, 29);
 		contentPane.add(btnViewToday);
 		
+		//
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(776, 160, 112, 29);
 		contentPane.add(comboBox);
 		
+		//Button which lets you create a new event
 		JButton btnCreatEvent = new JButton("Create Event");
 		btnCreatEvent.setBounds(776, 200, 112, 29);
 		contentPane.add(btnCreatEvent);
+		
+		//Exits the program
+		JButton btnExit = new JButton("Exit");
+		btnExit.setBounds(776, 241, 112, 29);
+		contentPane.add(btnExit);
 		
 
 		
