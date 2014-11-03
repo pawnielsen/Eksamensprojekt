@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.SwingConstants;
 
 
 public class DayView extends JFrame {
@@ -122,9 +123,10 @@ public class DayView extends JFrame {
 		label_23.setBounds(53, 750, 61, 16);
 		contentPane.add(label_23);
 		
-		JLabel lblFunctions = new JLabel("Functions");
-		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		lblFunctions.setBounds(557, 88, 112, 16);
+		JLabel lblFunctions = new JLabel("Todays View");
+		lblFunctions.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+		lblFunctions.setBounds(557, 88, 155, 16);
 		contentPane.add(lblFunctions);
 		
 		JButton btnBackToWeak = new JButton("Week View");
@@ -155,11 +157,6 @@ public class DayView extends JFrame {
 			table_2.setBounds(140, 60, 400, 720);
 			table_2.setRowHeight(40);
 			contentPane.add(table_2);
-			
-			JLabel lblTodaysView = new JLabel("Todays view");
-			lblTodaysView.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-			lblTodaysView.setBounds(140, 32, 130, 16);
-			contentPane.add(lblTodaysView);
 			
 
 	

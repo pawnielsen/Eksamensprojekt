@@ -270,9 +270,10 @@ public class WeekView extends JFrame {
 		contentPane.add(table_11);
 		
 		//Label for functions
-		JLabel lblFunctions = new JLabel("Functions");
-		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		lblFunctions.setBounds(781, 90, 101, 16);
+		JLabel lblFunctions = new JLabel("Week View");
+		lblFunctions.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+		lblFunctions.setBounds(781, 90, 122, 16);
 		contentPane.add(lblFunctions);
 		
 		//Button which directs you to 'Todays view'
