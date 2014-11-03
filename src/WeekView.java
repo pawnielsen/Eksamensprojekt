@@ -8,10 +8,15 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+
 import java.util.Calendar;
 
 
@@ -274,6 +279,14 @@ public class WeekView extends JFrame {
 		JButton btnViewToday = new JButton("Todays view");
 		btnViewToday.setBounds(776, 120, 112, 29);
 		contentPane.add(btnViewToday);
+		btnViewToday.addMouseListener(new MouseAdapter() 
+		{
+			public void mouseClicked(MouseEvent e) 
+			{
+				DayView frame = new DayView();
+				frame.setVisible(true);
+			}
+		});
 		
 		//
 		JComboBox comboBox = new JComboBox();

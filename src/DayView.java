@@ -29,7 +29,18 @@ public class DayView extends JFrame {
 	 * 
 	 */
 
-	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					DayView frame = new DayView();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 	
 	public DayView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -113,15 +124,15 @@ public class DayView extends JFrame {
 		
 		JLabel lblFunctions = new JLabel("Functions");
 		lblFunctions.setFont(new Font("Lucida Grande", Font.BOLD, 18));
-		lblFunctions.setBounds(511, 90, 112, 16);
+		lblFunctions.setBounds(557, 88, 112, 16);
 		contentPane.add(lblFunctions);
 		
 		JButton btnBackToWeak = new JButton("Week View");
-		btnBackToWeak.setBounds(506, 120, 112, 29);
+		btnBackToWeak.setBounds(557, 117, 112, 29);
 		contentPane.add(btnBackToWeak);
 		
 		JButton btnCreateEvent = new JButton("Create event");
-		btnCreateEvent.setBounds(511, 160, 112, 29);
+		btnCreateEvent.setBounds(557, 158, 112, 29);
 		contentPane.add(btnCreateEvent);
 		
 			JButton btnExit = new JButton("Exit");
@@ -130,19 +141,25 @@ public class DayView extends JFrame {
 			System.exit(0);
 			}
 		});
-		btnExit.setBounds(511, 200, 112, 29);
+		btnExit.setBounds(557, 198, 112, 29);
 		contentPane.add(btnExit);
 		
 		
 		
-		String[] columnNames = {"time", "Activity"};
+		String[] columnNames = {"Activity"};
 		daysTodays = new String[] {"Today"};
 		 Object[][] data = {
-			    {null, "Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},{null,"Fri"},
+			    {"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},{"Fri"},
 			};
-		 table_2 = new JTable ();
-			table_2.setBounds(111, 71, 361, 695);
+		 table_2 = new JTable (data,columnNames);
+			table_2.setBounds(140, 60, 400, 720);
+			table_2.setRowHeight(40);
 			contentPane.add(table_2);
+			
+			JLabel lblTodaysView = new JLabel("Todays view");
+			lblTodaysView.setFont(new Font("Lucida Grande", Font.BOLD, 18));
+			lblTodaysView.setBounds(140, 32, 130, 16);
+			contentPane.add(lblTodaysView);
 			
 
 	
