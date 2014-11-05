@@ -18,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 import java.util.Calendar;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class WeekView extends JFrame {
@@ -57,6 +59,8 @@ public class WeekView extends JFrame {
 	 * Sets the time for the scheme 
 	 */
 	public WeekView() {
+		String[]weeks = {"Week", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+				"19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52"};
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 500, 1000, 1000);
 		contentPane = new JPanel();
@@ -278,6 +282,7 @@ public class WeekView extends JFrame {
 		
 		//Button which directs you to 'Todays view'
 		JButton btnViewToday = new JButton("Todays view");
+		btnViewToday.setBackground(Color.GRAY);
 		btnViewToday.setBounds(776, 120, 112, 29);
 		contentPane.add(btnViewToday);
 		btnViewToday.addMouseListener(new MouseAdapter() 
@@ -290,21 +295,40 @@ public class WeekView extends JFrame {
 		});
 		
 		// Scroll function for WeekView
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox(weeks);
+		comboBox.setBackground(new Color(238, 238, 238));
+		comboBox.setForeground(new Color(0, 0, 0));
 		comboBox.setBounds(776, 160, 112, 29);
 		contentPane.add(comboBox);
 		
 		//Button which lets you create a new event
 		JButton btnCreatEvent = new JButton("Create Event");
+		btnCreatEvent.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			CreateEvents event = new CreateEvents();
+			event.setVisible(true);
+			}
+		});
 		btnCreatEvent.setBounds(776, 200, 112, 29);
 		contentPane.add(btnCreatEvent);
 		
 		//Exits the program
 		JButton btnExit = new JButton("Exit");
+		btnExit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0);
+			}
+		});
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnExit.setBounds(776, 241, 112, 29);
 		contentPane.add(btnExit);
 		
-		//Signing out from user
+		//Signing out from user and goes back to LoginScreen
 		JButton btnSignOut = new JButton("Sign out");
 		btnSignOut.addMouseListener(new MouseAdapter() {
 			@Override

@@ -12,6 +12,8 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class DayView extends JFrame {
@@ -142,10 +144,25 @@ public class DayView extends JFrame {
 		contentPane.add(btnBackToWeak);
 		
 		JButton btnCreateEvent = new JButton("Create event");
+		btnCreateEvent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCreateEvent.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			CreateEvents event = new CreateEvents();
+			event.setVisible(true);
+			}
+		});
 		btnCreateEvent.setBounds(557, 158, 112, 29);
 		contentPane.add(btnCreateEvent);
 		
 			JButton btnExit = new JButton("Exit");
+			btnExit.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
 		btnExit.addMouseListener(new MouseAdapter() {
 		public void mouseClicked(MouseEvent e) {
 			System.exit(0);
