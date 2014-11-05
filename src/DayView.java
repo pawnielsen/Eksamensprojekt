@@ -130,6 +130,14 @@ public class DayView extends JFrame {
 		contentPane.add(lblFunctions);
 		
 		JButton btnBackToWeak = new JButton("Week View");
+		btnBackToWeak.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				WeekView wV = new WeekView();
+				wV.setVisible(true);
+				dispose();
+			}
+		});
 		btnBackToWeak.setBounds(557, 117, 112, 29);
 		contentPane.add(btnBackToWeak);
 		
