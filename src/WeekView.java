@@ -304,13 +304,14 @@ public class WeekView extends JFrame {
 		btnExit.setBounds(776, 241, 112, 29);
 		contentPane.add(btnExit);
 		
+		//Signing out from user
 		JButton btnSignOut = new JButton("Sign out");
 		btnSignOut.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			dispose();
 			LoginScreen login = new LoginScreen();
 			login.setVisible(true);
+			dispose();
 			}
 		});
 		btnSignOut.setBounds(776, 282, 117, 29);
