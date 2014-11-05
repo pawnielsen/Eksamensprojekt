@@ -289,7 +289,7 @@ public class WeekView extends JFrame {
 			}
 		});
 		
-		//
+		// Scroll function for WeekView
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(776, 160, 112, 29);
 		contentPane.add(comboBox);
@@ -318,9 +318,6 @@ public class WeekView extends JFrame {
 		contentPane.add(btnSignOut);
 		
 
-		
-		
-		
 		
 	}
 }
