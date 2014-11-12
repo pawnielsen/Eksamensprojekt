@@ -12,6 +12,9 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JEditorPane;
 
 
 
@@ -21,7 +24,6 @@ public class CreateEvents extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -47,12 +49,12 @@ public class CreateEvents extends JFrame {
 	
 	public CreateEvents() {
 		
-		String[]month = {"Months" ,"January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+		String[]month = {"Month" ,"January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 		String[]day = {"Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}; 
 		String[]timeHour = {"Hour", "07.00", "08.00", "09.00", "10.00", "11.00", "12.00", "13.00", "14.00", "15.00", "16.00","17.00", "18.00", "19.00", "20.00", "21.00", "22.00", "23.00", "24.00"};
 		String[]timeMinute = {"Minute", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
 		"19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53",
-		"54","55","56","57","58","59","60"};
+		"54","55","56","57","58","59"};
 		String[]durationHours = {"Hours", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18","19", "20", "21", "22", "23", "24"};
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 1000);
@@ -126,11 +128,6 @@ public class CreateEvents extends JFrame {
 		lblNotes_1.setBounds(76, 416, 61, 16);
 		contentPane.add(lblNotes_1);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(184, 410, 184, 91);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
-		
 		JLabel lblChooseMonth = new JLabel("Choose Month");
 		lblChooseMonth.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 		lblChooseMonth.setBounds(76, 143, 99, 16);
@@ -146,11 +143,14 @@ public class CreateEvents extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnCancel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			WeekView viewweek = new WeekView(); 
-			viewweek.setVisible(true); 
+			dispose();
 			}
 		});
 		btnCancel.setBounds(143, 541, 117, 29);
@@ -161,6 +161,10 @@ public class CreateEvents extends JFrame {
 		JButton btnCreateEvent = new JButton("Create event");
 		btnCreateEvent.setBounds(268, 541, 117, 29);
 		contentPane.add(btnCreateEvent);
+		
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBounds(184, 406, 184, 123);
+		contentPane.add(editorPane);
 		
 		
 	}

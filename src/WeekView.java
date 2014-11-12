@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import java.util.Calendar;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Choice;
 
 
 public class WeekView extends JFrame {
@@ -61,7 +62,9 @@ public class WeekView extends JFrame {
 	public WeekView() {
 		String[]weeks = {"Week", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18",
 				"19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52"};
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		LoginScreen login = new LoginScreen();
+				login.setVisible(true);
 		setBounds(100, 500, 1000, 1000);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -330,6 +333,10 @@ public class WeekView extends JFrame {
 		
 		//Signing out from user and goes back to LoginScreen
 		JButton btnSignOut = new JButton("Sign out");
+		btnSignOut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnSignOut.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -338,8 +345,28 @@ public class WeekView extends JFrame {
 			dispose();
 			}
 		});
-		btnSignOut.setBounds(776, 282, 117, 29);
+		btnSignOut.setBounds(771, 726, 117, 29);
 		contentPane.add(btnSignOut);
+		
+		//Function is to send the user back and forward in the week calendar
+		JButton button = new JButton(">>");
+		button.setBounds(838, 345, 55, 29);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("<<");
+		button_1.setBounds(781, 345, 55, 29);
+		contentPane.add(button_1);
+		
+		JLabel lblPreviousnextWeek = new JLabel("Previous");
+		lblPreviousnextWeek.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPreviousnextWeek.setBounds(776, 323, 61, 16);
+		contentPane.add(lblPreviousnextWeek);
+		
+		JLabel lblNext = new JLabel("Next");
+		lblNext.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNext.setBounds(842, 323, 61, 16);
+		contentPane.add(lblNext);
+		
 		
 
 		

@@ -131,6 +131,7 @@ public class DayView extends JFrame {
 		lblFunctions.setBounds(557, 88, 155, 16);
 		contentPane.add(lblFunctions);
 		
+		//Sends you back til Week View
 		JButton btnBackToWeak = new JButton("Week View");
 		btnBackToWeak.addMouseListener(new MouseAdapter() {
 			@Override
@@ -143,6 +144,8 @@ public class DayView extends JFrame {
 		btnBackToWeak.setBounds(557, 117, 112, 29);
 		contentPane.add(btnBackToWeak);
 		
+		
+		//Sends you to 'CreateEvents'
 		JButton btnCreateEvent = new JButton("Create event");
 		btnCreateEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -158,6 +161,7 @@ public class DayView extends JFrame {
 		btnCreateEvent.setBounds(557, 158, 112, 29);
 		contentPane.add(btnCreateEvent);
 		
+		//Exits the program
 			JButton btnExit = new JButton("Exit");
 			btnExit.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -172,7 +176,7 @@ public class DayView extends JFrame {
 		contentPane.add(btnExit);
 		
 		
-		
+		//Jtable for DayView
 		String[] columnNames = {"Activity"};
 		daysTodays = new String[] {"Today"};
 		 Object[][] data = {

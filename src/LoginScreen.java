@@ -18,6 +18,9 @@ import javax.swing.JRadioButton;
 
 public class LoginScreen extends JFrame {
 
+	
+
+	//Private Labels, buttons and textfields for headlines at the LoginScrren
 	private JPanel contentPane;
 	private JTextField txtBrugernavn;
 	private JLabel lblUsername;
@@ -27,25 +30,7 @@ public class LoginScreen extends JFrame {
 	private JLabel lblWelcomeToCbs;
 	private JLabel lblPleaseSignIn;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginScreen frame = new LoginScreen();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public LoginScreen() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -67,6 +52,7 @@ public class LoginScreen extends JFrame {
 		{
 			public void mouseClicked(MouseEvent e) 
 			{
+				dispose();
 				WeekView frame = new WeekView();
 				frame.setVisible(true);
 			}
@@ -95,6 +81,7 @@ public class LoginScreen extends JFrame {
 	});
 		btnExit.setBounds(117, 220, 117, 29);
 		contentPane.add(btnExit);
+		dispose();
 
 		
 		JLabel lblCbsCalendar = new JLabel("CBS CALENDAR");
