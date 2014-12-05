@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -16,6 +17,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+
+import Logic.Logic;
 
 import java.util.Calendar;
 import java.awt.event.ActionListener;

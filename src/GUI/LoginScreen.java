@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -20,7 +21,7 @@ public class LoginScreen extends JFrame {
 
 	
 
-	//Private Labels, buttons and textfields for headlines at the LoginScrren
+	//Private Labels, buttons and textfields for headlines at the LoginScreen
 	private JPanel contentPane;
 	private JTextField txtBrugernavn;
 	private JLabel lblUsername;
@@ -57,7 +58,6 @@ public class LoginScreen extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-	
 
 		
 		lblUsername = new JLabel("Username");

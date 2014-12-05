@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -11,7 +12,9 @@ import javax.swing.JTable;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
