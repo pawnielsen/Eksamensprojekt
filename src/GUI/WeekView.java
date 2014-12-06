@@ -320,7 +320,7 @@ public class WeekView extends JFrame {
 		contentPane.add(btnCreatEvent);
 		
 		//Exits the program
-		JButton btnExit = new JButton("Exit");
+		JButton btnExit = new JButton("Exit Program");
 		btnExit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

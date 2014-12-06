@@ -5,8 +5,9 @@ public class Logic {
 
 	//Starter klassen Logic
 	
-	private static String testusername = "user";
-	private static String testpassword = "123";
+	private static String testusername = "Paw";
+	private static String testpassword = "1234";
+	
 	
 	public static int getFirstDayOfWeek(){
 		Calendar cal = Calendar.getInstance();
@@ -29,7 +30,7 @@ public class Logic {
 			}
 		}else{
 			//username does not match
-			Message m = new Message("The username dows not exist");
+			Message m = new Message("The username does not exist");
 			m.setVisible(true);
 			return false;
 		}
