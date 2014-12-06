@@ -16,6 +16,8 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JRadioButton;
 
+import Logic.Logic;
+
 
 public class LoginScreen extends JFrame {
 
@@ -53,9 +55,13 @@ public class LoginScreen extends JFrame {
 		{
 			public void mouseClicked(MouseEvent e) 
 			{
+				if(Logic.login(txtBrugernavn.getText(), passwordField.getText())){
 				dispose();
 				WeekView frame = new WeekView();
 				frame.setVisible(true);
+				}else{
+					passwordField.setText("");
+				}
 			}
 		});
 
